@@ -1,5 +1,6 @@
 import os
 import pandas
+import numpy
 
 
 def getFilePath():
@@ -30,4 +31,20 @@ california_housing_dataframe = pandas.read_csv(getFilePath(), sep=",")
 # print(california_housing_dataframe)
 print(california_housing_dataframe.head())
 print(california_housing_dataframe.describe())
-california_housing_dataframe.hist('housing_median_age')
+# california_housing_dataframe.hist('housing_median_age')
+
+cities = pandas.DataFrame({'City-Names': city_name, 'Population': population})
+print(type(cities['City-Names']))
+print(cities['City-Names'])
+
+print(type(cities['City-Names'][1]))
+print(cities['City-Names'][1])
+
+print(type(cities[0:2]))
+print(cities[0:2])
+
+print(population / 1000)
+
+print(numpy.log(population))
+
+print(population.apply(lambda val: val > 2))
