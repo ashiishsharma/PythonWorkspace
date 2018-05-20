@@ -48,3 +48,19 @@ print(population / 1000)
 print(numpy.log(population))
 
 print(population.apply(lambda val: val > 2))
+
+cities['Area-square-kilometers'] = pandas.Series([10,20,10])
+cities['Population-Density'] = cities['Population']/cities['Area-square-kilometers']
+print(cities)
+
+cities["Is-wide-and-With-population-greater-than-9"] = (cities['Area-square-kilometers'] > 10) & cities['City-Names'].apply(lambda name: name.startswith('De'))
+print(cities)
+
+print(city_name.index)
+print(cities.index)
+
+print(cities.reindex([2,0,1]))
+
+print(cities.reindex(numpy.random.permutation(cities.index)))
+
+print(cities.reindex([0,4,5,2]))
