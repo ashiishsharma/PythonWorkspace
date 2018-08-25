@@ -6,7 +6,7 @@ import tensorflow
 from IPython import display
 from matplotlib import cm, pyplot
 from matplotlib import gridspec
-import matplotlib.pyplot as plt
+import matplotlib.pyplot
 import numpy as np
 import os
 import pandas as pd
@@ -176,11 +176,11 @@ california_housing_dataframe["rooms_per_person"] = (
 
 calibration_data = train_model(learning_rate=0.05, steps=500, batch_size=5, input_feature="rooms_per_person")
 
-plt.figure(figsize=(15, 6))
-plt.subplot(1, 2, 1)
-plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+pyplot.figure(figsize=(15, 6))
+pyplot.subplot(1, 2, 1)
+pyplot.scatter(calibration_data["predictions"], calibration_data["targets"])
 
-plt.subplot(1, 2, 2)
+pyplot.subplot(1, 2, 2)
 _ = california_housing_dataframe["rooms_per_person"].hist()
 
 california_housing_dataframe["rooms_per_person"] = (
@@ -194,6 +194,6 @@ calibration_data = train_model(
     batch_size=5,
     input_feature="rooms_per_person")
 
-_ = plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+_ = pyplot.scatter(calibration_data["predictions"], calibration_data["targets"])
 
 pyplot.show()
